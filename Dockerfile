@@ -17,7 +17,8 @@ RUN python -m venv /py && \
         build-base postgresql-dev musl-dev && \
     /py/bin/pip install -r /tmp/requirements.txt && \
     if [ $DEV = "true" ] ; \ 
-    then /py/bin/pip install -r /tmp/requirements.dev.txt ; fi && \
+    then /py/bin/pip install -r /tmp/requirements.dev.txt ; \ 
+    fi && \
     rm -rf /tmp && \
     apk del .tmp-build-deps && \
     adduser \
