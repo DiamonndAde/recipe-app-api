@@ -1,10 +1,10 @@
 """Tests for recipe API endpoints"""
 
 from decimal import Decimal
-import tempfile
-import os
+# import tempfile
+# import os
 
-from PIL import Image
+# from PIL import Image
 
 from django.contrib.auth import get_user_model
 from django.test import TestCase
@@ -154,7 +154,11 @@ class PrivateRecipeApiTests(TestCase):
         """Test updating a recipe with PUT"""
         original_link = 'https://example.com/recipe.pdf'
         recipe = create_recipe(
-            user=self.user, title='Sample recipe title', link=original_link, description='Sample recipe description')
+            user=self.user,
+            title='Sample recipe title',
+            link=original_link,
+            description='Sample recipe description'
+        )
 
         payload = {
             'title': 'New recipe title',
